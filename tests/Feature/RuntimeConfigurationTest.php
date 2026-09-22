@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Http;
 use SmartDato\GlsAuthenticator\Facades\GlsAuthenticator;
 use SmartDato\GlsAuthenticator\Tests\Fixtures\GlsApiResponses;
+use SmartDato\GlsAuthenticator\ValueObjects\AccessToken;
 
 it('uses runtime credentials over default config', function () {
     config(['gls-authenticator.client_id' => 'default_id']);
@@ -56,7 +57,7 @@ it('supports fluent chaining of configuration methods', function () {
         ->scopes(['scope1', 'scope2'])
         ->getToken();
 
-    expect($token)->toBeInstanceOf(\SmartDato\GlsAuthenticator\ValueObjects\AccessToken::class);
+    expect($token)->toBeInstanceOf(AccessToken::class);
 
     Http::assertSent(function ($request) {
         return str_contains($request->url(), 'api.gls-group.net')

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Http;
+use SmartDato\GlsAuthenticator\Exceptions\InvalidCredentialsException;
+use SmartDato\GlsAuthenticator\Exceptions\MissingCredentialsException;
+use SmartDato\GlsAuthenticator\Exceptions\TokenRequestException;
 use SmartDato\GlsAuthenticator\Facades\GlsAuthenticator;
 use SmartDato\GlsAuthenticator\Tests\Fixtures\GlsApiResponses;
 
@@ -61,7 +64,7 @@ it('throws exception when credentials are missing', function () {
     config(['gls-authenticator.client_secret' => null]);
 
     GlsAuthenticator::getToken();
-})->throws(\SmartDato\GlsAuthenticator\Exceptions\MissingCredentialsException::class);
+})->throws(MissingCredentialsException::class);
 
 it('handles invalid credentials error from API', function () {
     config(['gls-authenticator.client_id' => 'invalid_id']);
@@ -72,7 +75,7 @@ it('handles invalid credentials error from API', function () {
     ]);
 
     GlsAuthenticator::getToken();
-})->throws(\SmartDato\GlsAuthenticator\Exceptions\InvalidCredentialsException::class);
+})->throws(InvalidCredentialsException::class);
 
 it('handles server error from API', function () {
     config(['gls-authenticator.client_id' => 'test_client_id']);
@@ -83,4 +86,4 @@ it('handles server error from API', function () {
     ]);
 
     GlsAuthenticator::getToken();
-})->throws(\SmartDato\GlsAuthenticator\Exceptions\TokenRequestException::class);
+})->throws(TokenRequestException::class);
