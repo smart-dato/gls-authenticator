@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/smart-dato/gls-authenticator.svg?style=flat-square)](https://packagist.org/packages/smart-dato/gls-authenticator)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/gls-authenticator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/smart-dato/gls-authenticator/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/gls-authenticator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/smart-dato/gls-authenticator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/smart-dato/gls-authenticator/code-style.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/smart-dato/gls-authenticator/actions?query=workflow%3A%22Code+style%22+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/smart-dato/gls-authenticator.svg?style=flat-square)](https://packagist.org/packages/smart-dato/gls-authenticator)
 
 A Laravel package for authenticating with the GLS Group Authentication API v2. This package provides a fluent, cache-enabled interface for obtaining OAuth 2.0 access tokens using the client credentials grant type.
@@ -21,7 +21,7 @@ A Laravel package for authenticating with the GLS Group Authentication API v2. T
 ## Requirements
 
 - PHP 8.4 or higher
-- Laravel 11.0 or 12.0
+- Laravel 11 – 13
 
 ## Installation
 
@@ -382,10 +382,6 @@ For detailed API specifications, see the [OpenAPI documentation](documentation/a
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
